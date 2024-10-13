@@ -46,19 +46,27 @@ namespace Rado.SUA.Logic
         }
 
         private void CopyDirectory(string sourcePath, string targetPath, List<PlaceholderData> placeholders)
-        {            
-            foreach (string dirPath in Directory.GetDirectories(sourcePath, "*", SearchOption.AllDirectories))
+        {       
+            if(Directory.Exists(sourcePath)) 
             {
-                Directory.CreateDirectory(dirPath.Replace(sourcePath, targetPath));
-            }
-            foreach (string newPath in Directory.GetFiles(sourcePath, "*.*", SearchOption.AllDirectories))
-            {
-                if (File.Exists(newPath))
-                {
-                    File.Copy(newPath, newPath.Replace(sourcePath, targetPath), true);
+                foreach (string dirPath in Directory.GetDirectories(sourcePath, "*", SearchOption.AllDirectories))
+                {                    
+                    Directory.CreateDirectory(dirPath.Replace(sourcePath, targetPath));
                 }
-                else { }
             }
+            
+            if(Directory.Exists(sourcePath))
+            {
+                foreach (string newPath in Directory.GetFiles(sourcePath, "*.*", SearchOption.AllDirectories))
+                {
+                    if (File.Exists(newPath))
+                    {
+                        File.Copy(newPath, newPath.Replace(sourcePath, targetPath), true);
+                    }
+                    else { }
+                }
+            }
+           
         }
         #endregion
     }

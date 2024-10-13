@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 
 namespace Rado.SUA.Logic
 {
@@ -27,9 +28,27 @@ namespace Rado.SUA.Logic
 
         public override void Execute(List<PlaceholderData> placeholders, int index)
         {
+
+            //ProcessStartInfo startInfo = new ProcessStartInfo();
+            //startInfo.FileName = Path.GetFileName(Name);
+            //startInfo.WorkingDirectory = Path.GetDirectoryName(Name) + @"\";
+            //startInfo.WindowStyle = ProcessWindowStyle.Normal; 
+            //startInfo.UseShellExecute = false;
+            //Process process = Process.Start(startInfo);
+            //Process process = new Process();
+            //process.StartInfo.FileName = Path.GetFileName(Name);
+            //process.StartInfo.WorkingDirectory = Path.GetDirectoryName(Name);
+            //process.StartInfo.UseShellExecute = true;
+            //process.StartInfo.WindowStyle = ProcessWindowStyle.Normal;
+            //process.Start();
+            //process.WaitForExit();
+
             Process process = new Process();
-            process.StartInfo.FileName = Name;            
-            process.StartInfo.WindowStyle = ProcessWindowStyle.Normal;            
+            process.StartInfo.FileName = "cmd.exe";
+            process.StartInfo.Arguments = "/c \"" + Path.GetFileName(Name) + "\"";
+            process.StartInfo.WorkingDirectory = Path.GetDirectoryName(Name);
+            process.StartInfo.UseShellExecute = false;
+            process.StartInfo.WindowStyle = ProcessWindowStyle.Normal;
             process.Start();
             process.WaitForExit();
         }

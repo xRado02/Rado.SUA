@@ -73,7 +73,7 @@ namespace Rado.SUA.Logic
             {
                 string correcetFileName = Path.GetFileName(correctFile);
                 string destinationPath = Path.Combine(path, correcetFileName);
-                if (File.Exists(correcetFileName)) 
+                if (File.Exists(correctFile))
                 {
                     File.Copy(correctFile, destinationPath, true);
                 }

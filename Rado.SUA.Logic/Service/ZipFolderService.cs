@@ -16,13 +16,13 @@ namespace Rado.SUA.Logic.Service
             var placeholderService = new PlaceholderService();            
             var changedName = placeholderService.Replace(name, placeholders);
             var changedFolder = placeholderService.Replace(folder, placeholders);
-            if (Directory.Exists(changedName)) 
+            if (Directory.Exists(changedFolder)) 
             {
                 ZipFile.CreateFromDirectory(changedFolder, changedName);
             }
             
         }
-
+       
         public void UnZip(string folder, string name, List<PlaceholderData> placeholders)
         {
             var placeholderService = new PlaceholderService();
@@ -37,3 +37,6 @@ namespace Rado.SUA.Logic.Service
         #endregion
     }
 }
+
+
+//zmiana na gicie

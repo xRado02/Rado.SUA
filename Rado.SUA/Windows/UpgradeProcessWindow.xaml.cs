@@ -62,7 +62,7 @@ namespace Rado.SUA.Windows
             catch (Exception ex  /*MyException ex*/)
             {
                 loadingWindow1.Close();
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.Message.ToString());
             }
            
         }

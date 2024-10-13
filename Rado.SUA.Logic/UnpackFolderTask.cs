@@ -30,13 +30,16 @@ namespace Rado.SUA.Logic
         public override void Execute(List<PlaceholderData> placeholders, int index)
         {
             var placeholderService = new PlaceholderService();
-            var changedFolder = placeholderService.Replace(Folder, placeholders);
-            var changedName = placeholderService.Replace(Name, placeholders);
-            if (Directory.Exists(changedFolder)) 
+            var changedZipFolder = placeholderService.Replace(Folder, placeholders);
+            var changedFolderName = placeholderService.Replace(Name, placeholders);    
+            if(File.Exists(changedZipFolder))
             {
-                ZipFile.ExtractToDirectory(changedFolder, changedName);
+                ZipFile.ExtractToDirectory(changedZipFolder, changedFolderName);
             }
+
+          
             
+                      
         }
 
         #endregion 

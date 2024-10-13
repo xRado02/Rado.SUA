@@ -1,6 +1,7 @@
 ﻿using Rado.SUA.ViewModel;
 using Rado.SUA.ViewModel.Definition;
 using System;
+using System.CodeDom;
 using System.IO;
 using System.Windows;
 
@@ -64,5 +65,17 @@ namespace Rado.SUA.Windows.TasksWindow
                 task.FoldersToDelete.RemoveAt(index);
             }
         }
+
+        private void listBox_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            var task = DataContext as DeleteFolderTaskViewModel;
+
+            if (listBox.SelectedItem != null)
+            {                
+                var selectedFolder = listBox.SelectedItem.ToString();                
+
+               
+            }
+        } 
     }
 }

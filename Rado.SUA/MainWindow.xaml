@@ -21,9 +21,8 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Button Grid.Row="0" Grid.Column="1" Margin="30,60,30,0" Name="btn_configure" Content="Configure..." Click="btn_configure_Click"/>
+        <Button Grid.Row="0" Grid.Column="1"   Margin="30,60,30,0" Name="btn_configure" Content="Configure..." Click="btn_configure_Click"/>
         <Button Grid.Row="1" Grid.Column="1" Margin="30" Name="btn_upgrade" Content="Upgrade..." Click="btn_upgrade_Click"/>
-        <Button Grid.Row="2" Grid.Column="1" Margin="30,0,30,60" Name="btn_exit" Content="Exit" Click="btn_exit_Click"/>
-        <Button Grid.Row="3" Grid.Column="3" Margin="170,110,0,0" Height="40" Width="60" Name="btn_readMe" Content="README" Click="btn_readMe_Click"/>
+        <Button Grid.Row="2" Grid.Column="1" Margin="30,0,30,60" Name="btn_exit" Content="Exit" Click="btn_exit_Click"/>      
     </Grid>    
 </Window>
